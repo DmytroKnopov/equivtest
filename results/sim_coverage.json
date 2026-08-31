@@ -1,0 +1,81 @@
+{
+  "config": {
+    "theta": 0.6,
+    "delta_true": 0.0,
+    "image_rho": 0.8,
+    "m0": 2000,
+    "m1": 2000,
+    "alpha": 0.05,
+    "B": 400,
+    "n_rep": 1000,
+    "root_seed": 20260710
+  },
+  "cells": [
+    {
+      "sigma_seed": 0.002,
+      "n": 2,
+      "n_rep": 1000,
+      "coverage_two_level": 0.976,
+      "coverage_naive": 0.917,
+      "coverage_mc_se_two": 0.004839834707921338,
+      "coverage_mc_se_naive": 0.008724161850859943,
+      "mean_width_two_level": 0.023358061218749983,
+      "mean_width_naive": 0.016033173762499995
+    },
+    {
+      "sigma_seed": 0.002,
+      "n": 5,
+      "n_rep": 1000,
+      "coverage_two_level": 0.996,
+      "coverage_naive": 0.908,
+      "coverage_mc_se_two": 0.0019959959919799443,
+      "coverage_mc_se_naive": 0.009139803061335619,
+      "mean_width_two_level": 0.016998531613749993,
+      "mean_width_naive": 0.010158795332499995
+    },
+    {
+      "sigma_seed": 0.005,
+      "n": 2,
+      "n_rep": 1000,
+      "coverage_two_level": 0.937,
+      "coverage_naive": 0.786,
+      "coverage_mc_se_two": 0.007683163410991592,
+      "coverage_mc_se_naive": 0.012969348480166612,
+      "mean_width_two_level": 0.025793401631249994,
+      "mean_width_naive": 0.016070199624999993
+    },
+    {
+      "sigma_seed": 0.005,
+      "n": 5,
+      "n_rep": 1000,
+      "coverage_two_level": 0.97,
+      "coverage_naive": 0.771,
+      "coverage_mc_se_two": 0.0053944415837044735,
+      "coverage_mc_se_naive": 0.013287550564344055,
+      "mean_width_two_level": 0.01968312571749999,
+      "mean_width_naive": 0.010143324040000004
+    },
+    {
+      "sigma_seed": 0.01,
+      "n": 2,
+      "n_rep": 1000,
+      "coverage_two_level": 0.861,
+      "coverage_naive": 0.563,
+      "coverage_mc_se_two": 0.010939789760319894,
+      "coverage_mc_se_naive": 0.01568537535413163,
+      "mean_width_two_level": 0.033471691271874986,
+      "mean_width_naive": 0.016026404906249996
+    },
+    {
+      "sigma_seed": 0.01,
+      "n": 5,
+      "n_rep": 1000,
+      "coverage_two_level": 0.929,
+      "coverage_naive": 0.52,
+      "coverage_mc_se_two": 0.008121514637061239,
+      "coverage_mc_se_naive": 0.0157987341265052,
+      "mean_width_two_level": 0.026823523802499992,
+      "mean_width_naive": 0.010145493726250001
+    }
+  ]
+}
