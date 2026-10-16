@@ -11,6 +11,11 @@ version: 0.2.0
 date-released: 2026-10-16
 license: MIT
 repository-code: "https://github.com/DmytroKnopov/equivtest"
+doi: 10.5281/zenodo.23421510
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23421509
+    description: "Concept DOI of the Zenodo archive, resolving to the latest archived version"
 abstract: "Seed-level Welch-TOST for the practical equivalence of two training methods, a two-level (seed x item) hierarchical bootstrap, and a power analysis giving the number of training runs that a certification at a given margin requires, with the exact pooled-model TOST power as a benchmark. Companion code, simulation studies and case-study data for the article 'Equivalence testing and run-count design for stochastic machine-learning experiments' (D. Knopov and N. Shvai, 2026)."
 keywords:
   - equivalence testing

@@ -162,6 +162,15 @@ rows of an R × m correctness matrix, computed without forming the R × R
 matrix) and `item_agreement(correct)` (shares of items always, never and
 sometimes correct across the runs).
 
+## Citing
+
+Release v0.2.0 is the version archived with the submitted manuscript:
+DOI [10.5281/zenodo.23421510](https://doi.org/10.5281/zenodo.23421510).
+The concept DOI [10.5281/zenodo.23421509](https://doi.org/10.5281/zenodo.23421509)
+always resolves to the latest archived version. `CITATION.cff` holds the
+citation metadata (GitHub's "Cite this repository" button formats it);
+`CHANGELOG.md` lists what each release added.
+
 ## Licence
 
 MIT.
