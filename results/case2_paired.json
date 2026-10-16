@@ -1,0 +1,793 @@
+{
+  "provenance": {
+    "date": "2026-09-24",
+    "root_seed": 20260921,
+    "alpha": 0.05,
+    "margins": [
+      0.01,
+      0.02
+    ],
+    "subsampling_margin": 0.01,
+    "n_grid": [
+      2,
+      3,
+      5
+    ],
+    "reps_zoo": 5000,
+    "reps_multiberts": 2000
+  },
+  "comparisons": {
+    "zoo Adam vs SGD": {
+      "n_pairs": 10,
+      "m_items": 10000,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "delta_hat": -0.0001499999999999998,
+      "delta_hat_4dp": "-0.0002",
+      "sd_differences": 0.013583179958234295,
+      "same_seed_correlation": -0.22936945238423423,
+      "paired": {
+        "0.01": {
+          "delta": -0.0001499999999999998,
+          "se": 0.004295378653597116,
+          "df": 9,
+          "p_tost": 0.02376407497704003,
+          "ci90": [
+            -0.008023914160553225,
+            0.007723914160553226
+          ],
+          "equivalent": true,
+          "k": 10
+        },
+        "0.02": {
+          "delta": -0.0001499999999999998,
+          "se": 0.004295378653597116,
+          "df": 9,
+          "p_tost": 0.0006260672770850295,
+          "ci90": [
+            -0.008023914160553225,
+            0.007723914160553226
+          ],
+          "equivalent": true,
+          "k": 10
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": -0.0001500000000000945,
+          "se": 0.0038754856326515914,
+          "df": 17.85414736925907,
+          "p_tost": 0.010270025695378826,
+          "ci90": [
+            -0.00687331404314239,
+            0.006573314043142201
+          ],
+          "equivalent": true,
+          "n_a": 10,
+          "n_b": 10,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": -0.0001500000000000945,
+          "se": 0.0038754856326515914,
+          "df": 17.85414736925907,
+          "p_tost": 3.657369427789714e-05,
+          "ci90": [
+            -0.00687331404314239,
+            0.006573314043142201
+          ],
+          "equivalent": true,
+          "n_a": 10,
+          "n_b": 10,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.008665849320432737,
+        "0.01": 14
+      },
+      "paired_subsampling": {
+        "reps": 5000,
+        "pairs_available": 10,
+        "by_n": {
+          "2": {
+            "certification_rate": 0.044444444444444446,
+            "exact": true,
+            "n_subsets": 45,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          },
+          "3": {
+            "certification_rate": 0.03333333333333333,
+            "exact": true,
+            "n_subsets": 120,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          },
+          "5": {
+            "certification_rate": 0.07142857142857142,
+            "exact": true,
+            "n_subsets": 252,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          }
+        }
+      }
+    },
+    "zoo GELU vs tanh": {
+      "n_pairs": 10,
+      "m_items": 10000,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "delta_hat": 0.00125,
+      "delta_hat_4dp": "+0.0012",
+      "sd_differences": 0.011743295959823203,
+      "same_seed_correlation": -0.43928460707279116,
+      "paired": {
+        "0.01": {
+          "delta": 0.00125,
+          "se": 0.0037135562470494497,
+          "df": 9,
+          "p_tost": 0.021432596608963628,
+          "ci90": [
+            -0.005557367982603038,
+            0.008057367982603038
+          ],
+          "equivalent": true,
+          "k": 10
+        },
+        "0.02": {
+          "delta": 0.00125,
+          "se": 0.0037135562470494497,
+          "df": 9,
+          "p_tost": 0.00034560911273017424,
+          "ci90": [
+            -0.005557367982603038,
+            0.008057367982603038
+          ],
+          "equivalent": true,
+          "k": 10
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": 0.0012499999999999734,
+          "se": 0.003195804541374001,
+          "df": 13.19434074468001,
+          "p_tost": 0.008367337942945337,
+          "ci90": [
+            -0.0044031891235351995,
+            0.006903189123535146
+          ],
+          "equivalent": true,
+          "n_a": 10,
+          "n_b": 10,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": 0.0012499999999999734,
+          "se": 0.003195804541374001,
+          "df": 13.19434074468001,
+          "p_tost": 2.6029136226574723e-05,
+          "ci90": [
+            -0.0044031891235351995,
+            0.006903189123535146
+          ],
+          "equivalent": true,
+          "n_a": 10,
+          "n_b": 10,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.0071460361973148066,
+        "0.01": 10
+      },
+      "paired_subsampling": {
+        "reps": 5000,
+        "pairs_available": 10,
+        "by_n": {
+          "2": {
+            "certification_rate": 0.022222222222222223,
+            "exact": true,
+            "n_subsets": 45,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          },
+          "3": {
+            "certification_rate": 0.06666666666666667,
+            "exact": true,
+            "n_subsets": 120,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          },
+          "5": {
+            "certification_rate": 0.09126984126984126,
+            "exact": true,
+            "n_subsets": 252,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          }
+        }
+      }
+    },
+    "RTE lr": {
+      "n_pairs": 25,
+      "m_items": 277,
+      "seeds": null,
+      "delta_hat": 0.09833935018050541,
+      "delta_hat_4dp": "+0.0983",
+      "sd_differences": 0.07191036099673304,
+      "same_seed_correlation": -0.1511802819548016,
+      "paired": {
+        "0.01": {
+          "delta": 0.09833935018050541,
+          "se": 0.014382072199346608,
+          "df": 24,
+          "p_tost": 0.9999987981742469,
+          "ci90": [
+            0.07373332058267973,
+            0.12294537977833109
+          ],
+          "equivalent": false,
+          "k": 25
+        },
+        "0.02": {
+          "delta": 0.09833935018050541,
+          "se": 0.014382072199346608,
+          "df": 24,
+          "p_tost": 0.9999932688324785,
+          "ci90": [
+            0.07373332058267973,
+            0.12294537977833109
+          ],
+          "equivalent": false,
+          "k": 25
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": 0.09833935018050544,
+          "se": 0.013587378518014835,
+          "df": 35.14454437737499,
+          "p_tost": 0.9999999167628385,
+          "ci90": [
+            0.07538505579807897,
+            0.1212936445629319
+          ],
+          "equivalent": false,
+          "n_a": 25,
+          "n_b": 25,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": 0.09833935018050544,
+          "se": 0.013587378518014835,
+          "df": 35.14454437737499,
+          "p_tost": 0.999999224593586,
+          "ci90": [
+            0.07538505579807897,
+            0.1212936445629319
+          ],
+          "equivalent": false,
+          "n_a": 25,
+          "n_b": 25,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.04803863744318356,
+        "0.01": 397
+      },
+      "paired_subsampling": {
+        "reps": 2000,
+        "pairs_available": 25,
+        "by_n": {
+          "2": {
+            "certification_rate": 0.0,
+            "exact": true,
+            "n_subsets": 300,
+            "degenerate_subsets": 3,
+            "degenerate_share": 0.01
+          },
+          "3": {
+            "certification_rate": 0.0,
+            "exact": true,
+            "n_subsets": 2300,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          },
+          "5": {
+            "certification_rate": 0.0,
+            "exact": true,
+            "n_subsets": 53130,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          }
+        }
+      }
+    },
+    "SST-2 lr": {
+      "n_pairs": 25,
+      "m_items": 872,
+      "seeds": null,
+      "delta_hat": 0.008394495412844037,
+      "delta_hat_4dp": "+0.0084",
+      "sd_differences": 0.004962651237290078,
+      "same_seed_correlation": 0.48344767774087044,
+      "paired": {
+        "0.01": {
+          "delta": 0.008394495412844037,
+          "se": 0.0009925302474580156,
+          "df": 24,
+          "p_tost": 0.05941040878464879,
+          "ci90": [
+            0.006696393198700048,
+            0.010092597626988026
+          ],
+          "equivalent": false,
+          "k": 25
+        },
+        "0.02": {
+          "delta": 0.008394495412844037,
+          "se": 0.0009925302474580156,
+          "df": 24,
+          "p_tost": 1.0668934558145765e-11,
+          "ci90": [
+            0.006696393198700048,
+            0.010092597626988026
+          ],
+          "equivalent": true,
+          "k": 25
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": 0.008394495412844094,
+          "se": 0.00138091680949453,
+          "df": 47.99099105938424,
+          "p_tost": 0.12536293918028626,
+          "ci90": [
+            0.006078379771280664,
+            0.010710611054407524
+          ],
+          "equivalent": false,
+          "n_a": 25,
+          "n_b": 25,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": 0.008394495412844094,
+          "se": 0.00138091680949453,
+          "df": 47.99099105938424,
+          "p_tost": 2.720212665087901e-11,
+          "ci90": [
+            0.006078379771280664,
+            0.010710611054407524
+          ],
+          "equivalent": true,
+          "n_a": 25,
+          "n_b": 25,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.00488227820124037,
+        "0.01": 6
+      },
+      "paired_subsampling": {
+        "reps": 2000,
+        "pairs_available": 25,
+        "by_n": {
+          "2": {
+            "certification_rate": 0.043333333333333335,
+            "exact": true,
+            "n_subsets": 300,
+            "degenerate_subsets": 18,
+            "degenerate_share": 0.06
+          },
+          "3": {
+            "certification_rate": 0.036521739130434785,
+            "exact": true,
+            "n_subsets": 2300,
+            "degenerate_subsets": 11,
+            "degenerate_share": 0.004782608695652174
+          },
+          "5": {
+            "certification_rate": 0.07594579333709768,
+            "exact": true,
+            "n_subsets": 53130,
+            "degenerate_subsets": 1,
+            "degenerate_share": 1.8821757952192734e-05
+          }
+        }
+      }
+    },
+    "MNLI lr": {
+      "n_pairs": 25,
+      "m_items": 9815,
+      "seeds": null,
+      "delta_hat": 0.003977585328578706,
+      "delta_hat_4dp": "+0.0040",
+      "sd_differences": 0.003455895144862383,
+      "same_seed_correlation": -0.057359779618426594,
+      "paired": {
+        "0.01": {
+          "delta": 0.003977585328578706,
+          "se": 0.0006911790289724766,
+          "df": 24,
+          "p_tost": 3.3686673879709353e-09,
+          "ci90": [
+            0.002795059513900497,
+            0.005160111143256915
+          ],
+          "equivalent": true,
+          "k": 25
+        },
+        "0.02": {
+          "delta": 0.003977585328578706,
+          "se": 0.0006911790289724766,
+          "df": 24,
+          "p_tost": 3.065878122409061e-18,
+          "ci90": [
+            0.002795059513900497,
+            0.005160111143256915
+          ],
+          "equivalent": true,
+          "k": 25
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": 0.0039775853285787255,
+          "se": 0.0006725018882101006,
+          "df": 46.33009045179369,
+          "p_tost": 5.652917339533566e-12,
+          "ci90": [
+            0.0028488483030605655,
+            0.0051063223540968854
+          ],
+          "equivalent": true,
+          "n_a": 25,
+          "n_b": 25,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": 0.0039775853285787255,
+          "se": 0.0006725018882101006,
+          "df": 46.33009045179369,
+          "p_tost": 6.085104087506619e-28,
+          "ci90": [
+            0.0028488483030605655,
+            0.0051063223540968854
+          ],
+          "equivalent": true,
+          "n_a": 25,
+          "n_b": 25,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.002377653227570598,
+        "0.01": 3
+      },
+      "paired_subsampling": {
+        "reps": 2000,
+        "pairs_available": 25,
+        "by_n": {
+          "2": {
+            "certification_rate": 0.27666666666666667,
+            "exact": true,
+            "n_subsets": 300,
+            "degenerate_subsets": 1,
+            "degenerate_share": 0.0033333333333333335
+          },
+          "3": {
+            "certification_rate": 0.67,
+            "exact": true,
+            "n_subsets": 2300,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          },
+          "5": {
+            "certification_rate": 0.9876341050254094,
+            "exact": true,
+            "n_subsets": 53130,
+            "degenerate_subsets": 0,
+            "degenerate_share": 0.0
+          }
+        }
+      }
+    },
+    "RTE steps": {
+      "n_pairs": 5,
+      "m_items": 277,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "delta_hat": 0.04043321299638989,
+      "delta_hat_4dp": "+0.0404",
+      "sd_differences": 0.05647252620436527,
+      "same_seed_correlation": 0.8035621298624751,
+      "paired": {
+        "0.01": {
+          "delta": 0.04043321299638989,
+          "se": 0.025255281490819785,
+          "df": 4,
+          "p_tost": 0.8526952772323122,
+          "ci90": [
+            -0.013407177687589172,
+            0.09427360368036895
+          ],
+          "equivalent": false,
+          "k": 5
+        },
+        "0.02": {
+          "delta": 0.04043321299638989,
+          "se": 0.025255281490819785,
+          "df": 4,
+          "p_tost": 0.7680733617943403,
+          "ci90": [
+            -0.013407177687589172,
+            0.09427360368036895
+          ],
+          "equivalent": false,
+          "k": 5
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": 0.04043321299638991,
+          "se": 0.04054587193025035,
+          "df": 5.634131535921878,
+          "p_tost": 0.7584717634854243,
+          "ci90": [
+            -0.03928055148472809,
+            0.12014697747750791
+          ],
+          "equivalent": false,
+          "n_a": 5,
+          "n_b": 5,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": 0.04043321299638991,
+          "se": 0.04054587193025035,
+          "df": 5.634131535921878,
+          "p_tost": 0.6833072401118663,
+          "ci90": [
+            -0.03928055148472809,
+            0.12014697747750791
+          ],
+          "equivalent": false,
+          "n_a": 5,
+          "n_b": 5,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.06410865250853943,
+        "0.01": 705
+      },
+      "paired_subsampling": {
+        "reps": 2000,
+        "pairs_available": 5,
+        "by_n": {
+          "2": {
+            "skipped": "n = 2 is not computed for 5 pairs or fewer"
+          },
+          "3": {
+            "skipped": "n = 3 is not computed for 5 pairs or fewer"
+          },
+          "5": {
+            "skipped": "n = 5 is not computed for 5 pairs or fewer"
+          }
+        }
+      }
+    },
+    "SST-2 steps": {
+      "n_pairs": 5,
+      "m_items": 872,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "delta_hat": -0.010091743119266056,
+      "delta_hat_4dp": "-0.0101",
+      "sd_differences": 0.0037512447783936073,
+      "same_seed_correlation": -0.42977224748018517,
+      "paired": {
+        "0.01": {
+          "delta": -0.010091743119266056,
+          "se": 0.001677607664945848,
+          "df": 4,
+          "p_tost": 0.520494810526447,
+          "ci90": [
+            -0.013668145628497816,
+            -0.006515340610034295
+          ],
+          "equivalent": false,
+          "k": 5
+        },
+        "0.02": {
+          "delta": -0.010091743119266056,
+          "se": 0.001677607664945848,
+          "df": 4,
+          "p_tost": 0.002056547333314507,
+          "ci90": [
+            -0.013668145628497816,
+            -0.006515340610034295
+          ],
+          "equivalent": true,
+          "k": 5
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": -0.010091743119266083,
+          "se": 0.001404523935082086,
+          "df": 7.886435331230289,
+          "p_tost": 0.5252275849178165,
+          "ci90": [
+            -0.012708406886036736,
+            -0.007475079352495431
+          ],
+          "equivalent": false,
+          "n_a": 5,
+          "n_b": 5,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": -0.010091743119266083,
+          "se": 0.001404523935082086,
+          "df": 7.886435331230289,
+          "p_tost": 5.717786318315543e-05,
+          "ci90": [
+            -0.012708406886036736,
+            -0.007475079352495431
+          ],
+          "equivalent": true,
+          "n_a": 5,
+          "n_b": 5,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.0022207473315409318,
+        "0.01": 3
+      },
+      "paired_subsampling": {
+        "reps": 2000,
+        "pairs_available": 5,
+        "by_n": {
+          "2": {
+            "skipped": "n = 2 is not computed for 5 pairs or fewer"
+          },
+          "3": {
+            "skipped": "n = 3 is not computed for 5 pairs or fewer"
+          },
+          "5": {
+            "skipped": "n = 5 is not computed for 5 pairs or fewer"
+          }
+        }
+      }
+    },
+    "MNLI steps": {
+      "n_pairs": 5,
+      "m_items": 9815,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "delta_hat": -0.009393785022924097,
+      "delta_hat_4dp": "-0.0094",
+      "sd_differences": 0.0021461220191391086,
+      "same_seed_correlation": -0.5083559433153935,
+      "paired": {
+        "0.01": {
+          "delta": -0.009393785022924097,
+          "se": 0.0009597749445608302,
+          "df": 4,
+          "p_tost": 0.28096539793760766,
+          "ci90": [
+            -0.01143987815408294,
+            -0.007347691891765254
+          ],
+          "equivalent": false,
+          "k": 5
+        },
+        "0.02": {
+          "delta": -0.009393785022924097,
+          "se": 0.0009597749445608302,
+          "df": 4,
+          "p_tost": 0.00019063938856533902,
+          "ci90": [
+            -0.01143987815408294,
+            -0.007347691891765254
+          ],
+          "equivalent": true,
+          "k": 5
+        }
+      },
+      "unpaired": {
+        "0.01": {
+          "delta": -0.009393785022924095,
+          "se": 0.0007886705035298433,
+          "df": 7.240973705938485,
+          "p_tost": 0.23321235534747298,
+          "ci90": [
+            -0.010880535891079738,
+            -0.007907034154768452
+          ],
+          "equivalent": false,
+          "n_a": 5,
+          "n_b": 5,
+          "margin": 0.01
+        },
+        "0.02": {
+          "delta": -0.009393785022924095,
+          "se": 0.0007886705035298433,
+          "df": 7.240973705938485,
+          "p_tost": 1.0996338949409434e-06,
+          "ci90": [
+            -0.010880535891079738,
+            -0.007907034154768452
+          ],
+          "equivalent": true,
+          "n_a": 5,
+          "n_b": 5,
+          "margin": 0.02
+        }
+      },
+      "n_star_independent_arms": {
+        "s_pooled": 0.001246997557273085,
+        "0.01": 2
+      },
+      "paired_subsampling": {
+        "reps": 2000,
+        "pairs_available": 5,
+        "by_n": {
+          "2": {
+            "skipped": "n = 2 is not computed for 5 pairs or fewer"
+          },
+          "3": {
+            "skipped": "n = 3 is not computed for 5 pairs or fewer"
+          },
+          "5": {
+            "skipped": "n = 5 is not computed for 5 pairs or fewer"
+          }
+        }
+      }
+    }
+  }
+}

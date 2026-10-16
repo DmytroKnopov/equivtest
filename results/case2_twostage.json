@@ -1,0 +1,172 @@
+{
+  "provenance": {
+    "date": "2026-09-24",
+    "root_seed": 20260921,
+    "source": "case2_runs_modelzoo.csv",
+    "n_runs": 1000,
+    "s_full": 0.013579409542521483,
+    "n0": 5,
+    "power": 0.8,
+    "alpha": 0.05,
+    "floor": 5,
+    "upper_bound_level": 0.8,
+    "reps": 5000,
+    "gauss_reps": 20000
+  },
+  "by_margin": {
+    "0.01": {
+      "n_star_full": 33,
+      "oracle": {
+        "n": 33,
+        "achieved_rate": 0.7986,
+        "mc_se": 0.005671649495517155
+      },
+      "rules": {
+        "plugin": {
+          "achieved_rate": 0.5984,
+          "mc_se": 0.006932783567947293,
+          "infeasible_replications": 0,
+          "n_star": {
+            "median": 24.0,
+            "p2.5": 6.0,
+            "p97.5": 116.02499999999964,
+            "min": 5,
+            "max": 218
+          },
+          "n_star_raw_median": 24.0,
+          "share_floored": 0.0052,
+          "total_runs_mean": 77.0748,
+          "total_runs_median": 58.0,
+          "share_below_full_n_star": 0.6622
+        },
+        "upper80": {
+          "achieved_rate": 0.7788,
+          "mc_se": 0.005869762516490765,
+          "infeasible_replications": 0,
+          "n_star": {
+            "median": 39.0,
+            "p2.5": 10.0,
+            "p97.5": 189.0,
+            "min": 5,
+            "max": 344
+          },
+          "n_star_raw_median": 39.0,
+          "share_floored": 0.0012,
+          "total_runs_mean": 121.4384,
+          "total_runs_median": 88.0,
+          "share_below_full_n_star": null
+        }
+      },
+      "gaussian": {
+        "plugin": {
+          "achieved_rate": 0.6917,
+          "mc_se": 0.0032653568717676174,
+          "n_star": {
+            "median": 30.0,
+            "p2.5": 10.0,
+            "p97.5": 71.0,
+            "min": 5,
+            "max": 146
+          },
+          "total_runs_mean": 75.9117
+        },
+        "upper80": {
+          "achieved_rate": 0.88385,
+          "mc_se": 0.0022656034240351947,
+          "n_star": {
+            "median": 52.0,
+            "p2.5": 17.0,
+            "p97.5": 122.0,
+            "min": 5,
+            "max": 244
+          },
+          "total_runs_mean": 122.9273
+        }
+      }
+    },
+    "0.0173": {
+      "n_star_full": 12,
+      "oracle": {
+        "n": 12,
+        "achieved_rate": 0.794,
+        "mc_se": 0.005719510468562847
+      },
+      "rules": {
+        "plugin": {
+          "achieved_rate": 0.6622,
+          "mc_se": 0.006688664440678722,
+          "infeasible_replications": 0,
+          "n_star": {
+            "median": 9.0,
+            "p2.5": 5.0,
+            "p97.5": 38.0,
+            "min": 5,
+            "max": 75
+          },
+          "n_star_raw_median": 9.0,
+          "share_floored": 0.1158,
+          "total_runs_mean": 34.0008,
+          "total_runs_median": 28.0,
+          "share_below_full_n_star": 0.6604
+        },
+        "upper80": {
+          "achieved_rate": 0.8024,
+          "mc_se": 0.005631238584894091,
+          "infeasible_replications": 0,
+          "n_star": {
+            "median": 14.0,
+            "p2.5": 5.0,
+            "p97.5": 66.0,
+            "min": 5,
+            "max": 118
+          },
+          "n_star_raw_median": 14.0,
+          "share_floored": 0.0324,
+          "total_runs_mean": 49.7908,
+          "total_runs_median": 38.0,
+          "share_below_full_n_star": null
+        }
+      },
+      "gaussian": {
+        "plugin": {
+          "achieved_rate": 0.7181,
+          "mc_se": 0.003181449276666218,
+          "n_star": {
+            "median": 11.0,
+            "p2.5": 5.0,
+            "p97.5": 25.0,
+            "min": 5,
+            "max": 45
+          },
+          "total_runs_mean": 34.0375
+        },
+        "upper80": {
+          "achieved_rate": 0.8936,
+          "mc_se": 0.0021803559342456,
+          "n_star": {
+            "median": 18.0,
+            "p2.5": 6.0,
+            "p97.5": 41.0,
+            "min": 5,
+            "max": 81
+          },
+          "total_runs_mean": 49.3996
+        }
+      }
+    }
+  },
+  "reference_checks": {
+    "reps": 20000,
+    "gaussian_undersizing_share": {
+      "0.01": 0.56175,
+      "0.0173": 0.5419
+    },
+    "tail_miss_probability_exact": 0.5973112929066544,
+    "tail_miss_share_empirical": 0.5991,
+    "upper_bound_factor": 1.7415634701060234,
+    "upper_bound_covers_full_pool_variance": {
+      "real_seed_law": 0.6082,
+      "gaussian": 0.80075
+    }
+  }
+}

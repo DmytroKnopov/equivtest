@@ -5,3 +5,11 @@ __pycache__/
 build/
 dist/
 .idea/
+# inputs downloaded by the second case study, and smoke-run outputs
+data/modelzoo/
+data/multiberts/
+data/derived/
+data/cifar-10-batches-py/
+data/cifar-10-python.tar.gz
+results/*_smoke.*
+results/*_fast.*

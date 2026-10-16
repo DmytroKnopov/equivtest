@@ -75,7 +75,10 @@ def simulate_runs_dist(
 
     theta_s is clipped to (0.505, 0.999) to keep the binormal link defined;
     the clip probability peaks at about 3e-5 per draw (t3 at sigma = 0.01),
-    around 8 expected clips over the whole grid -- immaterial to the estimates.
+    about 11 expected clips over the whole grid; the t3 tails carry variance
+    far out, so clipping lowers the t3 variance by 3.4% at sigma = 0.01 and
+    1.7% at sigma = 0.005 (factors 0.966 and 0.983). sigma is therefore the
+    pre-clipping scale, and the formula, which uses it, errs conservatively.
     """
     effects = seed_effects(dist, n_seeds, rng)
     runs = []

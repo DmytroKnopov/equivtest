@@ -12,11 +12,70 @@ import pytest
 
 from equivtest.auroc import auroc, delong_variance
 from equivtest.dgp import simulate_runs
-from equivtest.power import seeds_needed, tost_power
+from equivtest.power import seeds_needed, tost_power, tost_power_exact
 from equivtest.tost import welch_tost
 
 MARGIN = 0.01
 ALPHA = 0.05
+
+
+class TestExactPower:
+    """tost_power_exact against a direct Monte-Carlo evaluation of the pooled
+    normal model, and its relation to the shifted-t heuristic."""
+
+    @pytest.mark.parametrize(
+        "n,delta_true", [(2, 0.0), (3, 0.0), (5, 0.0), (5, 0.005), (12, 0.0), (12, 0.007)]
+    )
+    def test_matches_monte_carlo_of_the_normal_model(self, n, delta_true):
+        sigma_seed, v_bar = 0.0075, 1e-5
+        tau = (sigma_seed**2 + v_bar) ** 0.5
+        nu = 2 * (n - 1)
+        c = (2.0 / n) ** 0.5
+        from scipy.stats import t as student_t
+
+        t_crit = student_t.ppf(1 - ALPHA, df=nu)
+        rng = np.random.default_rng(20261006)
+        reps = 400_000
+        diff = rng.normal(delta_true, tau * c, size=reps)
+        s = tau * np.sqrt(rng.chisquare(nu, size=reps) / nu)
+        declared = np.abs(diff) < MARGIN - t_crit * s * c
+        mc = declared.mean()
+        mc_se = (mc * (1 - mc) / reps) ** 0.5
+        exact = tost_power_exact(delta_true, MARGIN, n, sigma_seed, v_bar, ALPHA)
+        assert abs(exact - mc) < 4 * mc_se + 1e-4
+
+    def test_positive_at_two_runs_where_the_heuristic_is_zero(self):
+        # Case-study plug-in: s = 0.0080, margin 0.01, n = 2.
+        heuristic = tost_power(0.0, MARGIN, 2, 0.0080, 0.0, ALPHA)
+        exact = tost_power_exact(0.0, MARGIN, 2, 0.0080, 0.0, ALPHA)
+        assert heuristic == 0.0
+        assert 0.0 < exact < 0.1
+
+    def test_converges_to_the_heuristic_for_large_n(self):
+        # Margin scaled with n so that the power stays in the informative range.
+        sigma_seed, v_bar = 0.0075, 1e-5
+        tau = (sigma_seed**2 + v_bar) ** 0.5
+        for n in (100, 300):
+            margin = 2.5 * tau * (2.0 / n) ** 0.5
+            exact = tost_power_exact(0.0, margin, n, sigma_seed, v_bar, ALPHA)
+            heuristic = tost_power(0.0, margin, n, sigma_seed, v_bar, ALPHA)
+            assert 0.3 < exact < 0.9
+            assert abs(exact - heuristic) < 0.01
+
+    def test_monotone_in_n(self):
+        powers = [
+            tost_power_exact(0.0, MARGIN, n, 0.005, 2e-5, ALPHA)
+            for n in (2, 3, 5, 8, 12, 20)
+        ]
+        assert all(b > a for a, b in zip(powers, powers[1:]))
+
+    def test_seeds_needed_exact_round_trip(self):
+        n_star = seeds_needed(
+            margin=MARGIN, power=0.8, sigma_seed=0.006, v_bar=3e-5, alpha=ALPHA,
+            exact=True,
+        )
+        assert tost_power_exact(0.0, MARGIN, n_star, 0.006, 3e-5, ALPHA) >= 0.8
+        assert tost_power_exact(0.0, MARGIN, n_star - 1, 0.006, 3e-5, ALPHA) < 0.8
 
 
 class TestMonotonicity:

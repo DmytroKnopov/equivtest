@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "equivtest"
-version = "0.1.0"
+version = "0.2.0"
 description = "Equivalence testing and power analysis for comparing machine-learning methods by AUROC"
 authors = [{ name = "Dmytro Knopov" }]
 readme = "README.md"
